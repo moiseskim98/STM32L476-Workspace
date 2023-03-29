@@ -1,0 +1,49 @@
+17:03:51 **** Incremental Build of configuration Debug for project 2_gpio_output ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/hkim/Documentos/STM32L476-Workspace/chip-header/CMSIS/Device/ST/STM32L4xx/Include -I/home/hkim/Documentos/STM32L476-Workspace/chip-header/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "2_gpio_output.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/hkim/Documentos/STM32L476-Workspace/2_gpio_output/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2_gpio_output.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 2_gpio_output.elf
+ 
+arm-none-eabi-size   2_gpio_output.elf 
+arm-none-eabi-objdump -h -S  2_gpio_output.elf  > "2_gpio_output.list"
+   text	   data	    bss	    dec	    hex	filename
+    768	      8	   1568	   2344	    928	2_gpio_output.elf
+Finished building: default.size.stdout
+ 
+Finished building: 2_gpio_output.list
+ 
+17:03:55 **** Incremental Build of configuration Debug for project 2_gpio_output ****
+make -j16 all 
+arm-none-eabi-size   2_gpio_output.elf 
+   text	   data	    bss	    dec	    hex	filename
+    768	      8	   1568	   2344	    928	2_gpio_output.elf
+Finished building: default.size.stdout
+ 
+17:04:39 **** Incremental Build of configuration Debug for project 2_gpio_output ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/hkim/Documentos/STM32L476-Workspace/chip-header/CMSIS/Device/ST/STM32L4xx/Include -I/home/hkim/Documentos/STM32L476-Workspace/chip-header/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "2_gpio_output.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/hkim/Documentos/STM32L476-Workspace/2_gpio_output/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2_gpio_output.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 2_gpio_output.elf
+ 
+arm-none-eabi-size   2_gpio_output.elf 
+arm-none-eabi-objdump -h -S  2_gpio_output.elf  > "2_gpio_output.list"
+   text	   data	    bss	    dec	    hex	filename
+    732	      8	   1568	   2308	    904	2_gpio_output.elf
+Finished building: default.size.stdout
+ 
+Finished building: 2_gpio_output.list
+ 
+17:05:09 **** Incremental Build of configuration Debug for project 2_gpio_output ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/hkim/Documentos/STM32L476-Workspace/chip-header/CMSIS/Device/ST/STM32L4xx/Include -I/home/hkim/Documentos/STM32L476-Workspace/chip-header/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "2_gpio_output.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/hkim/Documentos/STM32L476-Workspace/2_gpio_output/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2_gpio_output.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 2_gpio_output.elf
+ 
+arm-none-eabi-size   2_gpio_output.elf 
+arm-none-eabi-objdump -h -S  2_gpio_output.elf  > "2_gpio_output.list"
+   text	   data	    bss	    dec	    hex	filename
+    768	      8	   1568	   2344	    928	2_gpio_output.elf
+Finished building: default.size.stdout
+ 
+Finished building: 2_gpio_output.list
+ 
