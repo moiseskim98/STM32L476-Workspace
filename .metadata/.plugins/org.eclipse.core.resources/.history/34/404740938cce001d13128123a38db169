@@ -10,6 +10,7 @@
 
 int main(void)
 {
+	RCC->CR &= ~(1U<<5|1U<<6);
 	RCC->AHB2ENR |= AHB2ENR_GPIOAEN;
 
 	GPIOA->MODER |= MODER_MODE5_0;

@@ -266,3 +266,4 @@
 2023-03-29 16:19:46,255 [INFO] McuFinderGlobals:66 - Set McuFinderConnectedMode to true
 2023-03-29 16:19:46,257 [INFO] ApiDb:448 - Save user favorites file /home/hkim/.stm32cubeide/favorites.mcus.txt: 0 item(s)
 2023-03-29 16:19:46,257 [INFO] ApiDb:452 - User favorites MCUs=[]
+2023-03-29 17:49:32,898 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
