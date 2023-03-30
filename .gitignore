@@ -1,4 +1,5 @@
 # ignore all that is changed in .metadata
 .metadata/*
+.metadata/.*
 **/logs
 
