@@ -32,11 +32,12 @@ int main(void)
 
 		if(GPIOC->IDR & PUSH_BUTTON)
 		{
-			GPIOA->ODR |= LED_PIN;
+			GPIOA->BSRR |= LED_PIN;
 		}
 		else
 		{
-			GPIOA->ODR &= ~LED_PIN;
+			GPIOA->BSRR &= ~LED_PIN;
+			GPIOA->BSRR = (1u<<29);
 		}
 	}
 

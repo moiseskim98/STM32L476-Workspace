@@ -33,34 +33,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := 2_gpio_output
+BUILD_ARTIFACT_NAME := 3_gpio_input
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-2_gpio_output.elf \
+3_gpio_input.elf \
 
 MAP_FILES += \
-2_gpio_output.map \
+3_gpio_input.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-2_gpio_output.list \
+3_gpio_input.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: 2_gpio_output.elf secondary-outputs
+main-build: 3_gpio_input.elf secondary-outputs
 
 # Tool invocations
-2_gpio_output.elf 2_gpio_output.map: $(OBJS) $(USER_OBJS) /home/hkim/Documentos/STM32L476-Workspace/2_gpio_output/STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "2_gpio_output.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/hkim/Documentos/STM32L476-Workspace/2_gpio_output/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2_gpio_output.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+3_gpio_input.elf 3_gpio_input.map: $(OBJS) $(USER_OBJS) /home/hkim/Documentos/STM32L476-Workspace/3_gpio_input/STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "3_gpio_input.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/hkim/Documentos/STM32L476-Workspace/3_gpio_input/STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -69,14 +69,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-2_gpio_output.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "2_gpio_output.list"
+3_gpio_input.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "3_gpio_input.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) 2_gpio_output.elf 2_gpio_output.list 2_gpio_output.map default.size.stdout
+	-$(RM) 3_gpio_input.elf 3_gpio_input.list 3_gpio_input.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

@@ -13,7 +13,7 @@
 #define MODER_MODE13_0	(1U<<26)
 #define MODER_MODE13_1	(1U<<27)
 
-
+uint32_t hola;
 int main(void)
 {
 	//-------PA5 configuration----------
@@ -29,14 +29,14 @@ int main(void)
 
 	while(1)
 	{
-
-		if(GPIOC->IDR & PUSH_BUTTON)
+		hola = GPIOC->IDR;
+		if(hola & PUSH_BUTTON)
 		{
-			GPIOA->ODR |= LED_PIN;
+			GPIOA->BSRR = LED_PIN;
 		}
 		else
 		{
-			GPIOA->ODR &= ~LED_PIN;
+			GPIOA->BSRR = (1U<<29);
 		}
 	}
 

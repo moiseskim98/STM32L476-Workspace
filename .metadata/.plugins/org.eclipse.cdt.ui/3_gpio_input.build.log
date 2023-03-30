@@ -1,4 +1,4 @@
-10:45:43 **** Incremental Build of configuration Debug for project 3_gpio_input ****
+11:40:44 **** Incremental Build of configuration Debug for project 3_gpio_input ****
 make -j16 all 
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32l476rgtx.d" -MT"Startup/startup_stm32l476rgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32l476rgtx.o" "../Startup/startup_stm32l476rgtx.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32L4 -DSTM32 -DSTM32L476RGTx -DSTM32L476xx -c -I../Inc -I/home/hkim/Documentos/STM32L476-Workspace/chip-header/CMSIS/Device/ST/STM32L4xx/Include -I/home/hkim/Documentos/STM32L476-Workspace/chip-header/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
@@ -16,5 +16,5 @@ Finished building: default.size.stdout
 Finished building: 3_gpio_input.list
  
 
-10:45:44 Build Finished. 0 errors, 0 warnings. (took 226ms)
+11:40:44 Build Finished. 0 errors, 0 warnings. (took 227ms)
 
