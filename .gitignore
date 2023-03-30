@@ -2,4 +2,4 @@
 .metadata/*
 .metadata/.*
 **/logs
-
+**/Debug
