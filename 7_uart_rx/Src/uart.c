@@ -92,7 +92,7 @@ void uart2_tx_init(void)
 
 void uart2_rxtx_init(void)
 {
-	// Configuración de pines TX y RX:PA2 y RX:PA3
+	// Configuración de pines TX:PA2 y RX:PA3
 	RCC->AHB2ENR |= AHB2ENR_GPIOAEN; // clk bus
 	GPIOA->MODER |= (MODER_MODE2_1|MODER_MODE3_1);	// moder: 10
 	GPIOA->MODER &= ~(MODER_MODE2_0|MODER_MODE3_0); // es el modo alternativo

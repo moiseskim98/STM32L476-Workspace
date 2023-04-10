@@ -18,6 +18,7 @@
 #define MODER_MODE13_1		(1U<<27)
 
 uint32_t hola;
+char received;
 
 int main(void)
 {
@@ -33,11 +34,21 @@ int main(void)
 	//----------------------------------
 
 	//--------USART2--------------------
-	uart2_tx_init();
+	uart2_rxtx_init();
 
 
 	while(1)
 	{
+		received = uart2_read();
+		if(received == '1')
+		{
+			GPIOA->ODR |=  LED_PIN;
+		}
+		else
+		{
+			GPIOA->ODR &= ~LED_PIN;
+		}
+		/*
 		hola = GPIOC->IDR;
 		if(hola & PUSH_BUTTON)
 		{
@@ -48,6 +59,8 @@ int main(void)
 			GPIOA->ODR &= ~LED_PIN;
 			printf("hello from the other side!!!!\n\r");
 		}
+		*/
+
 	}
 
 	return 1;
