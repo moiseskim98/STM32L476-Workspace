@@ -46,10 +46,13 @@ void pc0_adc1_init(void)
 
 	// Salir del modo deep-power-down
 	ADC1->CR &= ~(CR_DEEPPWD);
+	//ADC1->CR &= 0x00000000;
 
 	// Habilitar el regulador del adc
 	ADC1->CR |= CR_ADVREGEN;
-	//for(int i = 0; i < 100000; i++){}
+
+	// Vref enable
+	// ADC123_COMMON->CCR |= (1U<<22);
 
 	// Configuracion del inicio de la secuencia de conversion
 	ADC1->SQR1 &= ~(SQR1_SQ1_1|SQR1_SQ1_2|SQR1_SQ1_3|SQR1_SQ1_4);
@@ -65,7 +68,8 @@ void pc0_adc1_init(void)
 	ADC1->CR |= CR_ADEN;
 
 	// Esperar que inicializó
-	while((ADC1->ISR & ISR_ADRDY) == 0){ADC1->ISR |= ISR_ADRDY;}
+	//while(!(ADC1->ISR & ISR_ADRDY)){}
+	//ADC1->ISR |= ISR_ADRDY;
 
 }
 

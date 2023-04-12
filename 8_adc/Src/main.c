@@ -47,6 +47,7 @@ int main(void)
 		start_adc1_conversion();
 		sensor_value = adc1_read();
 		printf("Sensor value : %d \n\r",(int)sensor_value);
+
 		/*received = uart2_read();
 		if(received == '1')
 		{
