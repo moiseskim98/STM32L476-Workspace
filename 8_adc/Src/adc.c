@@ -4,8 +4,13 @@
 #define AHB2ENR_ADCEN			(1U<<13)
 #define AHB2ENR_GPIOCEN			(1U<<2)
 
+#define CCIPR_ADCSEL_0			(1U<<28)
+#define CCIPR_ADCSEL_1			(1U<<29)
+
 #define GPIOx_MODER0_0			(1U<<0)
 #define GPIOx_MODER0_1			(1U<<1)
+
+#define ASCR_ASC0				(1U<<0)
 
 #define SQR1_L_0				(1U<<0)
 #define SQR1_L_1				(1U<<1)
@@ -37,12 +42,15 @@ void pc0_adc1_init(void)
 
 	// Configurar PC0 como analogo
 	GPIOC->MODER |= (GPIOx_MODER0_1|GPIOx_MODER0_0);
-
+	GPIOC->ASCR |= ASCR_ASC0;
 
 	//******Configuracion del modulo de ADC******
 
 	// Configuracion del reloj para el modulo
 	RCC->AHB2ENR |= AHB2ENR_ADCEN;
+
+	// Configurar el clk source del ADC
+	RCC->CCIPR |= (CCIPR_ADCSEL_0|CCIPR_ADCSEL_1);
 
 	// Salir del modo deep-power-down
 	ADC1->CR &= ~(CR_DEEPPWD);
@@ -68,8 +76,8 @@ void pc0_adc1_init(void)
 	ADC1->CR |= CR_ADEN;
 
 	// Esperar que inicializó
-	//while(!(ADC1->ISR & ISR_ADRDY)){}
-	//ADC1->ISR |= ISR_ADRDY;
+	while(!(ADC1->ISR & ISR_ADRDY)){}
+	ADC1->ISR |= ISR_ADRDY;
 
 }
 
